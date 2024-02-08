@@ -1,31 +1,3 @@
-<?php
-
-// Подключение к базе данных
-require_once('database.php');
-
-// Получение списка ПВК
-$pvk = get_pvk();
-
-// Обработка формы добавления ПВК
-if (isset($_POST['add_pvk'])) {
-  $name = $_POST['name'];
-
-  if (!empty($name)) {
-    add_pwk($name);
-    header('Location: index.php');
-  }
-}
-
-// Обработка формы удаления ПВК
-if (isset($_POST['delete_pvk'])) {
-  $id = $_POST['id'];
-
-  delete_pvk($id);
-  header('Location: index.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
