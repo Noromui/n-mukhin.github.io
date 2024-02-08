@@ -7,7 +7,7 @@ $db = mysqli_connect("VH306.spaceweb.ru", "mukhinnnik", "opdOPDopd", "mukhinnnik
 function get_pvk() {
   global $db;
 
-  $stmt = $db->prepare('SELECT * FROM pvk');
+  $stmt = $db->prepare('SELECT * FROM mukhinnnik');
   $stmt->execute();
 
   return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -17,7 +17,7 @@ function get_pvk() {
 function add_pvk($name) {
   global $db;
 
-  $stmt = $db->prepare('INSERT INTO pvk (name) VALUES (?)');
+  $stmt = $db->prepare('INSERT INTO mukhinnnik (name) VALUES (?)');
   $stmt->execute([$name]);
 }
 
@@ -25,7 +25,7 @@ function add_pvk($name) {
 function delete_pvk($id) {
   global $db;
 
-  $stmt = $db->prepare('DELETE FROM pvk WHERE id = ?');
+  $stmt = $db->prepare('DELETE FROM mukhinnnik WHERE id = ?');
   $stmt->execute([$id]);
 }
 
