@@ -7,23 +7,32 @@
 <body>
   <h1>Список профессионально важных качеств</h1>
 
-  <ul>
-    <?php
-      // Подключение файла с функциями
-      require_once('functions.php');
+  <ul>  
+  <?php
+    // Подключение файла с функциями
+    require_once('functions.php');
 
-      // Получение списка ПВК
-      $pvk = get_pvk();
+    // Получение списка ПВК
+    $pvk = get_pvk();
 
-      foreach ($pvk as $item): ?>
-        <li>
-          <?php echo $item['name']; ?>
-          <form action="index.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
-            <button type="submit" name="delete_pvk">Удалить</button>
-          </form>
-        </li>
-      <?php endforeach; ?>
+    if ($pvk === false) {
+      echo '<p>Ошибка при получении списка ПВК!</p>';
+    } else {
+      ?>
+      <ul>
+        <?php foreach ($pvk as $item): ?>
+          <li>
+            <?php echo $item['name']; ?>
+            <form action="index.php" method="post">
+              <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+              <button type="submit" name="delete_pvk">Удалить</button>
+            </form>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+      <?php
+    }
+  ?>
   </ul>
 
   <h2>Добавить ПВК</h2>
