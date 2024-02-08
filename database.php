@@ -1,7 +1,7 @@
 <?php
 
 // Подключение к базе данных
-$db = new PDO('mysql:host=localhost;dbname=pvk', 'root', '');
+$db = new PDO('mysql:host=localhost;dbname=pvk', 'root', 'root');
 
 // Функция для получения списка ПВК
 function get_pvk() {
