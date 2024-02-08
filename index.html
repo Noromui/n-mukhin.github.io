@@ -23,7 +23,7 @@
         <?php foreach ($pvk as $item): ?>
           <li>
             <?php echo $item['name']; ?>
-            <form action="index.php" method="post">
+            <form action="index.html" method="post">
               <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
               <button type="submit" name="delete_pvk">Удалить</button>
             </form>
@@ -37,7 +37,7 @@
 
   <h2>Добавить ПВК</h2>
 
-  <form action="index.php" method="post">
+  <form action="index.html" method="post">
     <input type="text" name="name" placeholder="Введите название ПВК">
     <button type="submit" name="add_pvk">Добавить</button>
   </form>
